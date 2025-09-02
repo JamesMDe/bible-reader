@@ -8,10 +8,9 @@ describe('BibleReaderSideNavComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [BibleReaderSideNavComponent]
-    })
-    .compileComponents();
-    
+      imports: [BibleReaderSideNavComponent],
+    }).compileComponents();
+
     fixture = TestBed.createComponent(BibleReaderSideNavComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
