@@ -1,16 +1,19 @@
-import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import * as kjv from './data/kjv.json';
-import { Bible } from './bible.model';
-import { Row } from './bible.model';
+import { Bible, Row } from './bible.model';
 import { booksOfTheBibleKJV } from './books';
+import * as kjv from './data/kjv.json';
 // In your main TypeScript entry file
 import 'bootstrap/dist/css/bootstrap.min.css';
 // In your main TypeScript entry file
+import { fas } from '@fortawesome/free-solid-svg-icons';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { BibleReaderSideNavComponent } from './bible-reader-side-nav/bible-reader-side-nav.component';
-
+// import { far } from '@fortawesome/free-regular-svg-icons';
+// import { fab } from '@fortawesome/free-brands-svg-icons';
+import { FaIconLibrary } from '@fortawesome/angular-fontawesome';
+import { BibleReaderToolbarComponent } from './bible-reader-toolbar/bible-reader-toolbar.component';
 // import { Field } from './bible.model';
 
 export interface Verse {
@@ -24,7 +27,12 @@ export interface Verse {
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [CommonModule, RouterOutlet, BibleReaderSideNavComponent],
+  imports: [
+    CommonModule,
+    RouterOutlet,
+    BibleReaderSideNavComponent,
+    BibleReaderToolbarComponent,
+  ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
 })
@@ -34,7 +42,9 @@ export class AppComponent {
   bible: Bible = <Bible>kjv;
   verses: Row[] = this.bible.resultset.row;
 
-  constructor() {}
+  constructor(iconLibrary: FaIconLibrary) {
+    iconLibrary.addIconPacks(fas);
+  }
 
   ngOnInit() {
     console.log(this.bible);

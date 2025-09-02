@@ -1,17 +1,26 @@
 <mat-drawer-container class="example-container" autosize>
   <mat-drawer #drawer class="example-sidenav" mode="side">
-    <p>Auto-resizing sidenav</p>
-    @if (showFiller) {
+    <!-- <p>Auto-resizing sidenav</p> -->
+    <!-- @if (showFiller) {
       <p>Lorem, ipsum dolor sit amet consectetur.</p>
     }
     <button (click)="showFiller = !showFiller" matButton="elevated">
       Toggle extra text
-    </button>
+    </button> -->
+
+    <mat-nav-list>
+      @for (item of menuItems; track item.id) {
+        <a mat-list-item>
+          <mat-icon matListItemIcon>{{ item.icon }}</mat-icon>
+          <div matListItemTitle>{{ item.label }}</div>
+        </a>
+      }
+    </mat-nav-list>
   </mat-drawer>
 
-  <div class="example-sidenav-content">
+  <!-- <div class="example-sidenav-content">
     <button type="button" matButton (click)="drawer.toggle()">
       Toggle sidenav
     </button>
-  </div>
+  </div> -->
 </mat-drawer-container>

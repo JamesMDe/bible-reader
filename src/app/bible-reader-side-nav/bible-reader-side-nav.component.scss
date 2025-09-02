@@ -17,3 +17,9 @@
   background-color: cadetblue;
   height: 100%;
 }
+
+.menu-item {
+  display: flex;
+  align-items: center;
+  gap: 8px; /* Optional: Adds some space between the icon and the text */
+}
