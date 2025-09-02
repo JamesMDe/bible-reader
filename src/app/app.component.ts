@@ -22,11 +22,10 @@ export interface Verse {
 }
 
 @Component({
-  selector: 'app-root',
-  standalone: true,
-  imports: [CommonModule, RouterOutlet, BibleReaderSideNavComponent],
-  templateUrl: './app.component.html',
-  styleUrl: './app.component.scss',
+    selector: 'app-root',
+    imports: [CommonModule, RouterOutlet, BibleReaderSideNavComponent],
+    templateUrl: './app.component.html',
+    styleUrl: './app.component.scss'
 })
 export class AppComponent {
   title = 'bible-reader';
