@@ -9,17 +9,17 @@
   display: flex;
   height: 100%;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
+  align-items: flex-start;
 }
 
 .example-sidenav {
   padding: 20px;
-  background-color: cadetblue;
+  background-color: #28282b;
+  width: min-content;
   height: 100%;
 }
 
 .menu-item {
-  display: flex;
-  align-items: center;
-  gap: 8px; /* Optional: Adds some space between the icon and the text */
+  color: white;
 }

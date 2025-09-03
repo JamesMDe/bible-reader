@@ -12,15 +12,15 @@
       @for (item of menuItems; track item.id) {
         <a mat-list-item>
           <mat-icon matListItemIcon>{{ item.icon }}</mat-icon>
-          <div matListItemTitle>{{ item.label }}</div>
+          <div matListItemTitle class="menu-item">{{ item.label }}</div>
         </a>
       }
     </mat-nav-list>
   </mat-drawer>
 
-  <!-- <div class="example-sidenav-content">
-    <button type="button" matButton (click)="drawer.toggle()">
-      Toggle sidenav
-    </button>
-  </div> -->
+  <app-bible-reader-scripture-search-bar></app-bible-reader-scripture-search-bar>
+
+  <div class="example-sidenav-content">
+    <app-bible-page></app-bible-page>
+  </div>
 </mat-drawer-container>

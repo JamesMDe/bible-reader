@@ -9,8 +9,11 @@ import {
 } from '@angular/material/list';
 import {
   MatDrawer,
-  MatSidenavModule
+  MatSidenav,
+  MatSidenavModule,
 } from '@angular/material/sidenav';
+import { BiblePageComponent } from '../bible-page/bible-page.component';
+import { BibleReaderScriptureSearchBarComponent } from '../bible-reader-scripture-search-bar/bible-reader-scripture-search-bar.component';
 import { BibleReaderSidenavService } from '../bible-reader-sidenav-service.service';
 
 export interface SideNavItem {
@@ -23,6 +26,7 @@ export interface SideNavItem {
   selector: 'app-bible-reader-side-nav',
   standalone: true,
   imports: [
+    MatSidenav,
     MatSidenavModule,
     MatButtonModule,
     MatNavList,
@@ -30,6 +34,8 @@ export interface SideNavItem {
     MatListItemIcon,
     MatListItemTitle,
     MatIconModule,
+    BibleReaderScriptureSearchBarComponent,
+    BiblePageComponent,
   ],
   templateUrl: './bible-reader-side-nav.component.html',
   styleUrl: './bible-reader-side-nav.component.scss',
